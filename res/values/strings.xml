@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MACTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="submit">Submit</string>
+    <string name="next">Next</string>
+    <string name="quit">Back</string>
+    <string name="textview">TextView</string>
+    <string name="todo">TODO</string>
+
+</resources>
