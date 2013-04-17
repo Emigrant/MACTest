@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+//import android.view.View;
+import android.view.View;
 import android.widget.ImageView;
 
 public class Camera extends Activity {
@@ -29,5 +31,19 @@ public class Camera extends Activity {
 		
 		Bitmap bm = (Bitmap) data.getExtras().get("data");
 		iv.setImageBitmap(bm);
+		
+	}
+	
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+					switch (v.getId()){
+					    case R.id.quit:
+					    	finish();					       
+					    	break;
+					    case R.id.next:
+					    	//readAndViewData();
+					    	break;
+				    }
+		
 	}
 }

@@ -23,11 +23,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	public static final String TABLE_CONTACTS = "contacts";
 	public static final String TABLE_GROUPS = "groups";
 	public static final String TABLE_NAMES = "names";
+	public static final String TABLE_ATTND = "attendance";
 
 	// Contacts Table Columns names
 	public static final String KEY_ID = "id";
 	public static final String KEY_NAME = "name";
 	public static final String KEY_SURNM = "phone_number";
+	public static final String KEY_DATE = "date";
+	public static final String KEY_SUBJECT = "subject";
+	public static final String PHOTO = "photo";
 
 	public DatabaseHandler(Context context, String tableName) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -48,6 +52,9 @@ String CREATE_NAMES_TABLE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAMES + "("
 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
 + KEY_SURNM + " TEXT" + ")";
 db.execSQL(CREATE_NAMES_TABLE);
+
+
+
 	}
 
 	// Upgrading database
@@ -108,7 +115,7 @@ db.execSQL(CREATE_NAMES_TABLE);
 				Contact contact = new Contact();
 				contact.setID(Integer.parseInt(cursor.getString(0)));
 				contact.setName(cursor.getString(1));
-				contact.setPhoneNumber(cursor.getString(2));
+				contact.setSurname(cursor.getString(2));
 				// Adding contact to list
 				contactList.add(contact);
 			} while (cursor.moveToNext());

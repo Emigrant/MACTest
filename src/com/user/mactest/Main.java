@@ -38,8 +38,10 @@ public class Main extends Activity {
 				switch (v.getId()) 
 				{
 				    case R.id.mainBut:
+				        //if (pass.getText().toString()=="pass"){
 				        Intent intent = new Intent(Main.this, Second.class);
-				        startActivity(intent);
+				        startActivity(intent); //}
+				        //else et.setText(pass.getText());
 				        break;
 			    }
 			}

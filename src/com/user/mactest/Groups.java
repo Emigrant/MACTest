@@ -12,8 +12,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ListView;
-//import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class Groups extends Activity implements View.OnClickListener{
 	
@@ -49,15 +50,16 @@ public class Groups extends Activity implements View.OnClickListener{
         db.addContact(new Contact(16, "B-03"));
 		ArrayAdapter<Contact> adapter = new ArrayAdapter<Contact>(this, android.R.layout.simple_list_item_1, db.getAllContacts());
 		listView.setAdapter(adapter);
-		final String a = db.getAllContacts().toString();
+		//final String a = db.getAllContacts().toString();
 		listView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
+			public void onItemClick(AdapterView<?> parent, View itemClicked, int position,
+					long id) {
 				// TODO Auto-generated method stub
-				startActivity(new Intent(Groups.this, Names.class));
-					
+				 Toast.makeText(getApplicationContext(), ((TextView) itemClicked).getText(),
+				          Toast.LENGTH_SHORT).show();
+				startActivity(new Intent(Groups.this, Names.class));				
 			}
 		});		
         // Reading all contacts

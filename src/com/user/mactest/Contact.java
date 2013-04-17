@@ -50,14 +50,14 @@ public class Contact {
 		this._name = name;
 	}
 	
-	// getting phone number
+	// getting surname
 	public String getSurname(){
 		return this._surname;
 	}
 	
-	// setting phone number
-	public void setPhoneNumber(String phone_number){
-		this._surname = phone_number;
+	// setting surname
+	public void setSurname(String surname){
+		this._surname = surname;
 	}
 	
 	@Override
