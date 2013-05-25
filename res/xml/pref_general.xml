@@ -1,0 +1,11 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+	<Preference
+	    android:title="Courses Manager">	    
+	</Preference>
+	<Preference
+	    android:title="Groups Manager">	    
+	</Preference>
+	<Preference
+	    android:title="Students Manager">	    
+	</Preference>
+</PreferenceScreen>

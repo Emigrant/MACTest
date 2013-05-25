@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
+        android:minSdkVersion="11"
         android:targetSdkVersion="17" />
 
     <application
@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.user.mactest.Main"
+            android:name="com.user.mactest.activities.Main"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +22,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity android:name="com.user.mactest.Second"></activity>
-        <activity android:name="com.user.mactest.Groups"></activity>
-        <activity android:name="com.user.mactest.Camera"></activity>
-        <activity android:name="com.user.mactest.Names"></activity>
+        <activity android:name="com.user.mactest.activities.Courses" >
+        </activity>
+        <activity android:name="com.user.mactest.activities.Groups" >
+        </activity>
+        <activity android:name="com.user.mactest.activities.Names" >
+        </activity>
+        <activity android:name="com.user.mactest.activities.Camera" >
+        </activity>
+        <activity
+            android:name="com.user.mactest.manager.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="com.user.mactest.manager.ManagerActivity"
+            android:label="@string/title_activity_manager" >
+        </activity>
+        <activity
+            android:name="com.user.calc.EditorActivity"
+            android:label="@string/title_activity_editor" >
+        </activity>
+        <activity
+            android:name="com.user.calc.GroupEditor"
+            android:label="@string/title_activity_group_editor" >
+        </activity>
+        <activity
+            android:name="com.user.calc.CourseEditor"
+            android:label="@string/title_activity_course_editor" >
+        </activity>
+        <activity
+            android:name="com.user.calc.StudentEditor"
+            android:label="@string/title_activity_student_editor" >
+        </activity>
     </application>
 
 </manifest>

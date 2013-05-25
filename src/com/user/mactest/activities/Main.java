@@ -1,11 +1,13 @@
-package com.user.mactest;
+package com.user.mactest.activities;
 
 import com.user.calc.R;
+import com.user.mactest.utils.Util;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,19 +19,23 @@ public class Main extends Activity {
 	private EditText et;
 	private EditText pass;
 	Button main;
+	private EditText pass1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
-		putDataToDB();
+		Log.i("@@",	"dsfdsf");
+		//Util.writeData(this);
+		//putDataToDB();
 		et = (EditText) findViewById(R.id.editText1);
 		pass = (EditText) findViewById(R.id.password);
 		
-		SharedPreferences settings = getSharedPreferences("MYPREFS", 0);
-		et.setText(settings.getString("tvalue", ""));
+		final SharedPreferences settings = getSharedPreferences("MYPREFS", 0);
+		et.setText(settings.getString("pass", ""));
 		pass.setText(settings.getString("pass", ""));
 	
+		pass1 = (EditText) findViewById(R.id.password);
 		main = (Button) findViewById(R.id.mainBut);
 		main.setOnClickListener(new OnClickListener() {
 			
@@ -38,10 +44,11 @@ public class Main extends Activity {
 				switch (v.getId()) 
 				{
 				    case R.id.mainBut:
-				        //if (pass.getText().toString()=="pass"){
-				        Intent intent = new Intent(Main.this, Second.class);
-				        startActivity(intent); //}
-				        //else et.setText(pass.getText());
+				        if (pass.getText().toString().equals(settings.getString("pass", ""))){
+				        	Intent intent = new Intent(Main.this, Courses.class);
+				        	startActivity(intent); //}
+				        }
+				        else et.setText(pass.getText());
 				        break;
 			    }
 			}
@@ -61,15 +68,10 @@ public class Main extends Activity {
 		SharedPreferences.Editor editor = settings.edit();
 		
 		editor.putString("tvalue", et.getText().toString());
+		editor.clear();
 		editor.putString("pass", pass.getText().toString());
 		editor.commit();
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
 
 }
